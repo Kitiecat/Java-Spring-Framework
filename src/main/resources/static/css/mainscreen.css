@@ -1,0 +1,64 @@
+body {
+    background-color: #333333;
+    height: 100%;
+    color: black;
+    background-image: url('../images/blue-circuit-board-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 100px;
+}
+header {
+    background-color: #212529;
+    top: 0;
+    position: fixed;
+    width: 100%;
+}
+
+h1 {
+    color: dodgerblue;
+}
+h2 {
+    color: Black;
+
+}
+.nav-tabs {
+    border-color: black;
+}
+.nav-pills .nav-item .nav-link.active{
+    border-color: black;
+    color: black;
+    background: dodgerblue;
+}
+.nav-pills .nav-item .nav-link{
+    border-color: black;
+    color: white;
+    text-decoration: none;
+
+}
+
+.container{
+    background-color:white;
+}
+th {
+    color: white;
+}
+.btn-primary {
+    background-color: dodgerblue;
+    border-color: black;
+    color: black;
+
+}
+.btn-primary:hover{
+    color: black;
+    background-color: white;
+}
+
+.text-box{
+    background-color: darkgray;
+}
+
+.filter{
+    color: white;
+}
+
+
