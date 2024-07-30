@@ -108,10 +108,10 @@ class PartTest {
         Set<Prebuilt> myProducts= new HashSet<>();
         myProducts.add(product1);
         myProducts.add(product2);
-        partIn.setProducts(myProducts);
-        assertEquals(myProducts,partIn.getProducts());
-        partOut.setProducts(myProducts);
-        assertEquals(myProducts,partOut.getProducts());
+        partIn.setPrebuilts(myProducts);
+        assertEquals(myProducts,partIn.getPrebuilts());
+        partOut.setPrebuilts(myProducts);
+        assertEquals(myProducts,partOut.getPrebuilts());
     }
 
     @Test
@@ -121,10 +121,10 @@ class PartTest {
         Set<Prebuilt> myProducts= new HashSet<>();
         myProducts.add(product1);
         myProducts.add(product2);
-        partIn.setProducts(myProducts);
-        assertEquals(myProducts,partIn.getProducts());
-        partOut.setProducts(myProducts);
-        assertEquals(myProducts,partOut.getProducts());
+        partIn.setPrebuilts(myProducts);
+        assertEquals(myProducts,partIn.getPrebuilts());
+        partOut.setPrebuilts(myProducts);
+        assertEquals(myProducts,partOut.getPrebuilts());
     }
 
     @Test

@@ -117,7 +117,7 @@ public class AddProductController {
         ProductService productService = context.getBean(PrebuiltServiceImpl.class);
         Prebuilt product2=productService.findById(theId);
         for(Part part:product2.getParts()){
-            part.getProducts().remove(product2);
+            part.getPrebuilts().remove(product2);
             partService.save(part);
         }
         product2.getParts().removeAll(product2.getParts());
@@ -141,7 +141,7 @@ public class AddProductController {
         }
         else{
         product1.getParts().add(partService.findById(theID));
-        partService.findById(theID).getProducts().add(product1);
+        partService.findById(theID).getPrebuilts().add(product1);
         ProductService productService = context.getBean(PrebuiltServiceImpl.class);
         productService.save(product1);
         partService.save(partService.findById(theID));
@@ -160,7 +160,7 @@ public class AddProductController {
         theModel.addAttribute("product", product);
       //  Product product1=new Product();
         product1.getParts().remove(partService.findById(theID));
-        partService.findById(theID).getProducts().remove(product1);
+        partService.findById(theID).getPrebuilts().remove(product1);
         ProductService productService = context.getBean(PrebuiltServiceImpl.class);
         productService.save(product1);
         partService.save(partService.findById(theID));

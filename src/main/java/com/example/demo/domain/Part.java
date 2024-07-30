@@ -30,9 +30,9 @@ public abstract class Part implements Serializable {
     int inv;
 
     @ManyToMany
-    @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
-            inverseJoinColumns=@JoinColumn(name="product_id"))
-    Set<Prebuilt> products= new HashSet<>();
+    @JoinTable(name="prebuilt_parts", joinColumns = @JoinColumn(name="parts_id"),
+            inverseJoinColumns=@JoinColumn(name="prebuilts_id"))
+    Set<Prebuilt> prebuilts= new HashSet<>();
 
     public Part() {
     }
@@ -82,12 +82,12 @@ public abstract class Part implements Serializable {
         this.inv = inv;
     }
 
-    public Set<Prebuilt> getProducts() {
-        return products;
+    public Set<Prebuilt> getPrebuilts() {
+        return prebuilts;
     }
 
-    public void setProducts(Set<Prebuilt> products) {
-        this.products = products;
+    public void setPrebuilts(Set<Prebuilt> prebuilt) {
+        this.prebuilts = prebuilt;
     }
 
     public String toString(){

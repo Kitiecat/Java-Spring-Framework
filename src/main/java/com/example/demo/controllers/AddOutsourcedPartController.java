@@ -46,7 +46,7 @@ public class AddOutsourcedPartController {
         else{
             PeripheralsServiceImpl repo=context.getBean(PeripheralsServiceImpl.class);
             Peripherals op=repo.findById((int)part.getId());
-        if(op!=null)part.setProducts(op.getProducts());
+        if(op!=null)part.setPrebuilts(op.getPrebuilts());
             repo.save(part);
         return "confirmationaddpart";}
     }

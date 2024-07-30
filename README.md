@@ -1,3 +1,22 @@
+Part C changes:
+
+modified the mainscreen.html to include a css sheet in the static/styles called mainscreen.
+Modifed the html to customize it for the customer Tom's Computer Hardware store. 
+
+Part D changes:
+
+created the AboutController class, used mapping to point it to the /about url. Created template about.html and modified the mainscreen.html to create a link in a navbar
+
+Part E changes:
+
+added code to the BootStrapData class to create 5 initial parts and products that will only run if the database is empty.
+
+Part F changes:
+
+
+
+
+
 <strong>** DO NOT DISTRIBUTE OR PUBLICLY POST SOLUTIONS TO THESE LABS. MAKE ALL FORKS OF THIS REPOSITORY WITH SOLUTION CODE PRIVATE. PLEASE REFER TO THE STUDENT CODE OF CONDUCT AND ETHICAL EXPECTATIONS FOR COLLEGE OF INFORMATION TECHNOLOGY STUDENTS FOR SPECIFICS. ** </strong>
 
 # WESTERN GOVERNORS UNIVERSITY 

@@ -28,7 +28,7 @@ public class Prebuilt implements Serializable {
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
-    @ManyToMany(cascade=CascadeType.ALL, mappedBy = "products")
+    @ManyToMany(cascade=CascadeType.ALL, mappedBy = "prebuilts")
     Set<Part> parts= new HashSet<>();
 
     public Prebuilt() {
@@ -90,14 +90,15 @@ public class Prebuilt implements Serializable {
     public String toString(){
         return this.name;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Prebuilt product = (Prebuilt) o;
+        Prebuilt prebuilt = (Prebuilt) o;
 
-        return id == product.id;
+        return id == prebuilt.id;
     }
 
     @Override

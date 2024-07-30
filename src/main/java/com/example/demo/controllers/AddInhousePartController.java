@@ -45,7 +45,7 @@ public class AddInhousePartController{
         else{
         InternalPartService repo=context.getBean(InhousePartServiceImpl.class);
         InternalPart ip=repo.findById((int)part.getId());
-        if(ip!=null)part.setProducts(ip.getProducts());
+        if(ip!=null)part.setPrebuilts(ip.getPrebuilts());
             repo.save(part);
 
         return "confirmationaddpart";}

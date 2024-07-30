@@ -54,7 +54,7 @@ public class AddPartController {
     public String deletePart(@Valid @RequestParam("partID") int theId,  Model theModel){
         PartService repo = context.getBean(PartServiceImpl.class);
         Part part=repo.findById(theId);
-        if(part.getProducts().isEmpty()){
+        if(part.getPrebuilts().isEmpty()){
             repo.deleteById(theId);
             return "confirmationdeletepart";
         }
