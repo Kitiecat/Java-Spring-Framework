@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/mainscreen.css}">
     <title>Part Form</title>
 
 <!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
 </head>
 <body>
-<h1>Product Detail</h1>
-<form action="#" th:action="@{/showFormAddProduct}" th:object="${product}" method="POST"}>
+<div class="container">
+<h1>Prebuilt Detail</h1>
+<form action="#" th:action="@{/showFormAddPrebuilt}" th:object="${prebuilt}" method="POST"}>
     <!-- Add hidden form field to handle update -->
     <p><input type="hidden" th:field="*{id}"/></p>
 
@@ -73,5 +75,6 @@
 
 <!--<footer><a href="http://localhost:8080/">Link-->
 <!--    to Main Screen</a></footer>-->
+</div>
 </body>
 </html>
