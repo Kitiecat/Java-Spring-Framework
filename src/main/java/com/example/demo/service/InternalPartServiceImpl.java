@@ -2,9 +2,7 @@ package com.example.demo.service;
 
 
 import com.example.demo.domain.InternalPart;
-import com.example.demo.domain.Peripherals;
 import com.example.demo.repositories.InternalPartRepository;
-import com.example.demo.repositories.PeripheralsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,11 +16,11 @@ import java.util.Optional;
  *
  */
 @Service
-public class InhousePartServiceImpl implements InternalPartService {
+public class InternalPartServiceImpl implements InternalPartService {
     private InternalPartRepository partRepository;
 
     @Autowired
-    public InhousePartServiceImpl(InternalPartRepository partRepository) {
+    public InternalPartServiceImpl(InternalPartRepository partRepository) {
         this.partRepository = partRepository;
     }
 
@@ -42,7 +40,7 @@ public class InhousePartServiceImpl implements InternalPartService {
             thePart = result.get();
         }
         else {
-            // we didn't find the InhousePart id
+            // we didn't find the InternalPart id
             //throw new RuntimeException("Did not find part id - " + theId);
             return null;
         }

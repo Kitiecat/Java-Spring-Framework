@@ -105,4 +105,8 @@ public class Prebuilt implements Serializable {
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
     }
+
+    public void decreaseInvByAmount(int amount) {
+        setInv(getInv() - amount);
+    }
 }

@@ -3,7 +3,7 @@ package com.example.demo.controllers;
 import com.example.demo.domain.Part;
 import com.example.demo.domain.Prebuilt;
 import com.example.demo.service.PartService;
-import com.example.demo.service.ProductService;
+import com.example.demo.service.PrebuiltService;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,33 +21,33 @@ import java.util.List;
 @Controller
 public class MainScreenControllerr {
    // private final PartRepository partRepository;
-   // private final ProductRepository productRepository;'
+   // private final ProductRepository prebuiltRepository;'
 
     private PartService partService;
-    private ProductService productService;
+    private PrebuiltService prebuiltService;
 
     private List<Part> theParts;
     private List<Prebuilt> theProducts;
 
- /*   public MainScreenControllerr(PartRepository partRepository, ProductRepository productRepository) {
+ /*   public MainScreenControllerr(PartRepository partRepository, ProductRepository prebuiltRepository) {
         this.partRepository = partRepository;
-        this.productRepository = productRepository;
+        this.prebuiltRepository = prebuiltRepository;
     }*/
 
-    public MainScreenControllerr(PartService partService,ProductService productService){
+    public MainScreenControllerr(PartService partService,PrebuiltService prebuiltService){
         this.partService=partService;
-        this.productService=productService;
+        this.prebuiltService=prebuiltService;
     }
     @GetMapping("/mainscreen")
-    public String listPartsandProducts(Model theModel, @Param("partkeyword") String partkeyword, @Param("productkeyword") String productkeyword){
+    public String listPartsandProducts(Model theModel, @Param("partkeyword") String partkeyword, @Param("prebuiltkeyword") String prebuiltkeyword){
         //add to the sprig model
         List<Part> partList=partService.listAll(partkeyword);
         theModel.addAttribute("parts",partList);
         theModel.addAttribute("partkeyword",partkeyword);
-    //    theModel.addAttribute("products",productService.findAll());
-        List<Prebuilt> productList=productService.listAll(productkeyword);
-        theModel.addAttribute("products", productList);
-        theModel.addAttribute("productkeyword",productkeyword);
+    //    theModel.addAttribute("prebuilts",prebuiltService.findAll());
+        List<Prebuilt> prebuiltListList=prebuiltService.listAll(prebuiltkeyword);
+        theModel.addAttribute("prebuilts", prebuiltListList);
+        theModel.addAttribute("prebuiltkeyword",prebuiltkeyword);
         return "mainscreen";
     }
 }

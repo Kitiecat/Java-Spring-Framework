@@ -15,7 +15,7 @@ import java.util.Optional;
  *
  */
 @Service
-public class PrebuiltServiceImpl implements ProductService{
+public class PrebuiltServiceImpl implements PrebuiltService{
     private PrebuiltRepository prebuiltRepository;
 
     @Autowired
