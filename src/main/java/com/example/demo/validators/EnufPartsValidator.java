@@ -1,9 +1,9 @@
 package com.example.demo.validators;
 
 import com.example.demo.domain.Part;
-import com.example.demo.domain.Product;
+import com.example.demo.domain.Prebuilt;
 import com.example.demo.service.ProductService;
-import com.example.demo.service.ProductServiceImpl;
+import com.example.demo.service.PrebuiltServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
@@ -16,7 +16,7 @@ import javax.validation.ConstraintValidatorContext;
  *
  *
  */
-public class EnufPartsValidator implements ConstraintValidator<ValidEnufParts, Product> {
+public class EnufPartsValidator implements ConstraintValidator<ValidEnufParts, Prebuilt> {
     @Autowired
     private ApplicationContext context;
     public static  ApplicationContext myContext;
@@ -26,12 +26,12 @@ public class EnufPartsValidator implements ConstraintValidator<ValidEnufParts, P
     }
 
     @Override
-    public boolean isValid(Product product, ConstraintValidatorContext constraintValidatorContext) {
+    public boolean isValid(Prebuilt product, ConstraintValidatorContext constraintValidatorContext) {
         if(context==null) return true;
         if(context!=null)myContext=context;
-        ProductService repo = myContext.getBean(ProductServiceImpl.class);
+        ProductService repo = myContext.getBean(PrebuiltServiceImpl.class);
         if (product.getId() != 0) {
-            Product myProduct = repo.findById((int) product.getId());
+            Prebuilt myProduct = repo.findById((int) product.getId());
             for (Part p : myProduct.getParts()) {
                 if (p.getInv()<(product.getInv()-myProduct.getInv()))return false;
             }

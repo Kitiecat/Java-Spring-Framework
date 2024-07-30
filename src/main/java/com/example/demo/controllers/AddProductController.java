@@ -1,11 +1,11 @@
 package com.example.demo.controllers;
 
 import com.example.demo.domain.Part;
-import com.example.demo.domain.Product;
+import com.example.demo.domain.Prebuilt;
 import com.example.demo.service.PartService;
 import com.example.demo.service.PartServiceImpl;
 import com.example.demo.service.ProductService;
-import com.example.demo.service.ProductServiceImpl;
+import com.example.demo.service.PrebuiltServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -29,13 +29,13 @@ public class AddProductController {
     private ApplicationContext context;
     private PartService partService;
     private List<Part> theParts;
-    private static Product product1;
-    private Product product;
+    private static Prebuilt product1;
+    private Prebuilt product;
 
     @GetMapping("/showFormAddProduct")
     public String showFormAddPart(Model theModel) {
         theModel.addAttribute("parts", partService.findAll());
-        product = new Product();
+        product = new Prebuilt();
         product1=product;
         theModel.addAttribute("product", product);
 
@@ -49,12 +49,12 @@ public class AddProductController {
     }
 
     @PostMapping("/showFormAddProduct")
-    public String submitForm(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult, Model theModel) {
+    public String submitForm(@Valid @ModelAttribute("product") Prebuilt product, BindingResult bindingResult, Model theModel) {
         theModel.addAttribute("product", product);
 
         if(bindingResult.hasErrors()){
-            ProductService productService = context.getBean(ProductServiceImpl.class);
-            Product product2 = new Product();
+            ProductService productService = context.getBean(PrebuiltServiceImpl.class);
+            Prebuilt product2 = new Prebuilt();
             try {
                 product2 = productService.findById((int) product.getId());
             } catch (Exception e) {
@@ -73,9 +73,9 @@ public class AddProductController {
  //       this.product=product;
 //        product.getParts().addAll(assparts);
         else {
-            ProductService repo = context.getBean(ProductServiceImpl.class);
+            ProductService repo = context.getBean(PrebuiltServiceImpl.class);
             if(product.getId()!=0) {
-                Product product2 = repo.findById((int) product.getId());
+                Prebuilt product2 = repo.findById((int) product.getId());
                 PartService partService1 = context.getBean(PartServiceImpl.class);
                 if(product.getInv()- product2.getInv()>0) {
                     for (Part p : product2.getParts()) {
@@ -96,8 +96,8 @@ public class AddProductController {
     @GetMapping("/showProductFormForUpdate")
     public String showProductFormForUpdate(@RequestParam("productID") int theId, Model theModel) {
         theModel.addAttribute("parts", partService.findAll());
-        ProductService repo = context.getBean(ProductServiceImpl.class);
-        Product theProduct = repo.findById(theId);
+        ProductService repo = context.getBean(PrebuiltServiceImpl.class);
+        Prebuilt theProduct = repo.findById(theId);
         product1=theProduct;
     //    this.product=product;
         //set the employ as a model attibute to prepopulate the form
@@ -114,8 +114,8 @@ public class AddProductController {
 
     @GetMapping("/deleteproduct")
     public String deleteProduct(@RequestParam("productID") int theId, Model theModel) {
-        ProductService productService = context.getBean(ProductServiceImpl.class);
-        Product product2=productService.findById(theId);
+        ProductService productService = context.getBean(PrebuiltServiceImpl.class);
+        Prebuilt product2=productService.findById(theId);
         for(Part part:product2.getParts()){
             part.getProducts().remove(product2);
             partService.save(part);
@@ -142,7 +142,7 @@ public class AddProductController {
         else{
         product1.getParts().add(partService.findById(theID));
         partService.findById(theID).getProducts().add(product1);
-        ProductService productService = context.getBean(ProductServiceImpl.class);
+        ProductService productService = context.getBean(PrebuiltServiceImpl.class);
         productService.save(product1);
         partService.save(partService.findById(theID));
         theModel.addAttribute("product", product1);
@@ -161,7 +161,7 @@ public class AddProductController {
       //  Product product1=new Product();
         product1.getParts().remove(partService.findById(theID));
         partService.findById(theID).getProducts().remove(product1);
-        ProductService productService = context.getBean(ProductServiceImpl.class);
+        ProductService productService = context.getBean(PrebuiltServiceImpl.class);
         productService.save(product1);
         partService.save(partService.findById(theID));
         theModel.addAttribute("product", product1);

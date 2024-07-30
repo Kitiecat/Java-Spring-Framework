@@ -24,8 +24,8 @@ class PartTest {
     Part partOut;
     @BeforeEach
     void setUp() {
-        partIn=new InhousePart();
-        partOut=new OutsourcedPart();
+        partIn=new InternalPart();
+        partOut=new Peripherals();
     }
     @Test
     void getId() {
@@ -103,9 +103,9 @@ class PartTest {
 
     @Test
     void getProducts() {
-        Product product1= new Product();
-        Product product2= new Product();
-        Set<Product> myProducts= new HashSet<>();
+        Prebuilt product1= new Prebuilt();
+        Prebuilt product2= new Prebuilt();
+        Set<Prebuilt> myProducts= new HashSet<>();
         myProducts.add(product1);
         myProducts.add(product2);
         partIn.setProducts(myProducts);
@@ -116,9 +116,9 @@ class PartTest {
 
     @Test
     void setProducts() {
-        Product product1= new Product();
-        Product product2= new Product();
-        Set<Product> myProducts= new HashSet<>();
+        Prebuilt product1= new Prebuilt();
+        Prebuilt product2= new Prebuilt();
+        Set<Prebuilt> myProducts= new HashSet<>();
         myProducts.add(product1);
         myProducts.add(product2);
         partIn.setProducts(myProducts);
@@ -140,11 +140,11 @@ class PartTest {
     @Test
     void testEquals() {
         partIn.setId(1l);
-        Part newPartIn=new InhousePart();
+        Part newPartIn=new InternalPart();
         newPartIn.setId(1l);
         assertEquals(partIn,newPartIn);
         partOut.setId(1l);
-        Part newPartOut=new OutsourcedPart();
+        Part newPartOut=new Peripherals();
         newPartOut.setId(1l);
         assertEquals(partOut,newPartOut);
 

@@ -1,9 +1,10 @@
 package com.example.demo.service;
 
-import com.example.demo.domain.InhousePart;
-import com.example.demo.domain.OutsourcedPart;
-import com.example.demo.repositories.InhousePartRepository;
-import com.example.demo.repositories.OutsourcedPartRepository;
+
+import com.example.demo.domain.InternalPart;
+import com.example.demo.domain.Peripherals;
+import com.example.demo.repositories.InternalPartRepository;
+import com.example.demo.repositories.PeripheralsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,25 +18,25 @@ import java.util.Optional;
  *
  */
 @Service
-public class InhousePartServiceImpl implements InhousePartService {
-    private InhousePartRepository partRepository;
+public class InhousePartServiceImpl implements InternalPartService {
+    private InternalPartRepository partRepository;
 
     @Autowired
-    public InhousePartServiceImpl(InhousePartRepository partRepository) {
+    public InhousePartServiceImpl(InternalPartRepository partRepository) {
         this.partRepository = partRepository;
     }
 
     @Override
-    public List<InhousePart> findAll() {
-        return (List<InhousePart>) partRepository.findAll();
+    public List<InternalPart> findAll() {
+        return (List<InternalPart>) partRepository.findAll();
     }
 
     @Override
-    public InhousePart findById(int theId) {
+    public InternalPart findById(int theId) {
         Long theIdl=(long)theId;
-        Optional<InhousePart> result = partRepository.findById(theIdl);
+        Optional<InternalPart> result = partRepository.findById(theIdl);
 
-        InhousePart thePart = null;
+        InternalPart thePart = null;
 
         if (result.isPresent()) {
             thePart = result.get();
@@ -50,7 +51,7 @@ public class InhousePartServiceImpl implements InhousePartService {
     }
 
     @Override
-    public void save(InhousePart thePart) {
+    public void save(InternalPart thePart) {
         partRepository.save(thePart);
 
     }

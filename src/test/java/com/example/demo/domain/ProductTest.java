@@ -20,10 +20,10 @@ import static org.junit.jupiter.api.Assertions.*;
  * To change this template use File | Settings | File Templates.
  */
 class ProductTest {
-    Product product;
+    Prebuilt product;
     @BeforeEach
     public void setUp(){
-        product=new Product();
+        product=new Prebuilt();
     }
     @Test
     void getId() {
@@ -83,8 +83,8 @@ class ProductTest {
 
     @Test
     void getParts() {
-        Part part1 = new OutsourcedPart();
-        Part part2 = new InhousePart();
+        Part part1 = new Peripherals();
+        Part part2 = new InternalPart();
         Set<Part> myParts= new HashSet<>();
         myParts.add(part1);
         myParts.add(part2);
@@ -94,8 +94,8 @@ class ProductTest {
 
     @Test
     void setParts() {
-        Part part1 = new OutsourcedPart();
-        Part part2 = new InhousePart();
+        Part part1 = new Peripherals();
+        Part part2 = new InternalPart();
         Set<Part> myParts= new HashSet<>();
         myParts.add(part1);
         myParts.add(part2);
@@ -113,7 +113,7 @@ class ProductTest {
     @Test
     void testEquals() {
         product.setId(1l);
-        Product newProduct= new Product();
+        Prebuilt newProduct= new Prebuilt();
         newProduct.setId(1l);
         assertEquals(product,newProduct);
     }
@@ -121,7 +121,7 @@ class ProductTest {
     @Test
     void testHashCode() {
         product.setId(1l);
-        Product newProduct= new Product();
+        Prebuilt newProduct= new Prebuilt();
         newProduct.setId(1l);
         assertEquals(product.hashCode(),newProduct.hashCode());
     }

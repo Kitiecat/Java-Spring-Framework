@@ -1,15 +1,13 @@
 package com.example.demo.controllers;
 
-import com.example.demo.domain.InhousePart;
-import com.example.demo.domain.OutsourcedPart;
+import com.example.demo.domain.InternalPart;
+import com.example.demo.domain.Peripherals;
 import com.example.demo.domain.Part;
-import com.example.demo.repositories.PartRepository;
 import com.example.demo.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -30,22 +28,22 @@ public class AddPartController {
     public String showPartFormForUpdate(@RequestParam("partID") int theId,Model theModel){
 
         PartService repo=context.getBean(PartServiceImpl.class);
-        OutsourcedPartService outsourcedrepo=context.getBean(OutsourcedPartServiceImpl.class);
-        InhousePartService inhouserepo=context.getBean(InhousePartServiceImpl.class);
+        PeripheralsService outsourcedrepo=context.getBean(PeripheralsServiceImpl.class);
+        InternalPartService inhouserepo=context.getBean(InhousePartServiceImpl.class);
 
-        boolean inhouse=true;
-        List<OutsourcedPart> outsourcedParts=outsourcedrepo.findAll();
-        for(OutsourcedPart outsourcedPart:outsourcedParts) {
-            if(outsourcedPart.getId()==theId)inhouse=false;
+        boolean internalComponent=true;
+        List<Peripherals> outsourcedParts=outsourcedrepo.findAll();
+        for(Peripherals outsourcedPart:outsourcedParts) {
+            if(outsourcedPart.getId()==theId)internalComponent=false;
         }
         String formtype;
-        if(inhouse){
-            InhousePart inhousePart=inhouserepo.findById(theId);
+        if(internalComponent){
+            InternalPart inhousePart=inhouserepo.findById(theId);
             theModel.addAttribute("inhousepart",inhousePart);
             formtype="InhousePartForm";
         }
         else{
-            OutsourcedPart outsourcedPart=outsourcedrepo.findById(theId);
+            Peripherals outsourcedPart=outsourcedrepo.findById(theId);
             theModel.addAttribute("outsourcedpart",outsourcedPart);
             formtype="OutsourcedPartForm";
         }

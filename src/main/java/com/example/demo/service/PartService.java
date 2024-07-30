@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.Part;
-import com.example.demo.domain.Product;
+import com.example.demo.domain.Prebuilt;
 
 import java.util.List;
 

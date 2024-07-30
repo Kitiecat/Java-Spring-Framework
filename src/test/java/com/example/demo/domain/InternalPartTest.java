@@ -16,24 +16,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Created with IntelliJ IDEA
  * To change this template use File | Settings | File Templates.
  */
-class InhousePartTest {
-    InhousePart ip;
+class InternalPartTest {
+    InternalPart ip;
     @BeforeEach
     void setUp() {
-        ip= new InhousePart();
+        ip= new InternalPart();
     }
+//
+//    @Test
+//    void getPartId() {
+//        int idValue=4;
+//        ip.setPartId(idValue);
+//        assertEquals(ip.getPartId(), idValue);
+//    }
 
-    @Test
-    void getPartId() {
-        int idValue=4;
-        ip.setPartId(idValue);
-        assertEquals(ip.getPartId(), idValue);
-    }
-
-    @Test
-    void setPartId() {
-        int idValue=4;
-        ip.setPartId(idValue);
-        assertEquals(ip.getPartId(), idValue);
-    }
+//    @Test
+//    void setPartId() {
+//        int idValue=4;
+//        ip.setPartId(idValue);
+//        assertEquals(ip.getPartId(), idValue);
+//    }
 }

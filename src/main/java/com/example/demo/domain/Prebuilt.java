@@ -16,10 +16,10 @@ import java.util.Set;
  *
  */
 @Entity
-@Table(name="Products")
+@Table(name="Prebuilt")
 @ValidProductPrice
 @ValidEnufParts
-public class Product implements Serializable {
+public class Prebuilt implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
@@ -31,16 +31,16 @@ public class Product implements Serializable {
     @ManyToMany(cascade=CascadeType.ALL, mappedBy = "products")
     Set<Part> parts= new HashSet<>();
 
-    public Product() {
+    public Prebuilt() {
     }
 
-    public Product(String name, double price, int inv) {
+    public Prebuilt(String name, double price, int inv) {
         this.name = name;
         this.price = price;
         this.inv = inv;
     }
 
-    public Product(long id, String name, double price, int inv) {
+    public Prebuilt(long id, String name, double price, int inv) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -95,7 +95,7 @@ public class Product implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Product product = (Product) o;
+        Prebuilt product = (Prebuilt) o;
 
         return id == product.id;
     }

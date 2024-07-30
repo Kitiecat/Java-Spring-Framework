@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.Part;
-import com.example.demo.domain.Product;
+import com.example.demo.domain.Prebuilt;
 
 import java.util.List;
 
@@ -12,10 +12,10 @@ import java.util.List;
  *
  */
 public interface ProductService {
-    public List<Product> findAll();
-    public Product findById(int theId);
-    public void save (Product theProduct);
+    public List<Prebuilt> findAll();
+    public Prebuilt findById(int theId);
+    public void save (Prebuilt theProduct);
     public void deleteById(int theId);
-    public List<Product> listAll(String keyword);
+    public List<Prebuilt> listAll(String keyword);
 
 }

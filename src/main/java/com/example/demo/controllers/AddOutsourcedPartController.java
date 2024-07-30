@@ -1,10 +1,10 @@
 package com.example.demo.controllers;
 
-import com.example.demo.domain.InhousePart;
-import com.example.demo.domain.OutsourcedPart;
+import com.example.demo.domain.InternalPart;
+import com.example.demo.domain.Peripherals;
 import com.example.demo.domain.Part;
-import com.example.demo.service.OutsourcedPartService;
-import com.example.demo.service.OutsourcedPartServiceImpl;
+import com.example.demo.service.PeripheralsService;
+import com.example.demo.service.PeripheralsServiceImpl;
 import com.example.demo.service.PartService;
 import com.example.demo.service.PartServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,20 +32,20 @@ public class AddOutsourcedPartController {
 
     @GetMapping("/showFormAddOutPart")
     public String showFormAddOutsourcedPart(Model theModel){
-        Part part=new OutsourcedPart();
+        Part part=new Peripherals();
         theModel.addAttribute("outsourcedpart",part);
         return "OutsourcedPartForm";
     }
 
     @PostMapping("/showFormAddOutPart")
-    public String submitForm(@Valid @ModelAttribute("outsourcedpart") OutsourcedPart part, BindingResult bindingResult, Model theModel){
+    public String submitForm(@Valid @ModelAttribute("outsourcedpart") Peripherals part, BindingResult bindingResult, Model theModel){
         theModel.addAttribute("outsourcedpart",part);
         if(bindingResult.hasErrors()){
             return "OutsourcedPartForm";
         }
         else{
-        OutsourcedPartService repo=context.getBean(OutsourcedPartServiceImpl.class);
-        OutsourcedPart op=repo.findById((int)part.getId());
+            PeripheralsServiceImpl repo=context.getBean(PeripheralsServiceImpl.class);
+            Peripherals op=repo.findById((int)part.getId());
         if(op!=null)part.setProducts(op.getProducts());
             repo.save(part);
         return "confirmationaddpart";}

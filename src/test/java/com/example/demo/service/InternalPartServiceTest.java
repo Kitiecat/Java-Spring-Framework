@@ -1,8 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.domain.InhousePart;
-import com.example.demo.repositories.InhousePartRepository;
-import com.example.demo.repositories.PartRepository;
+import com.example.demo.domain.InternalPart;
+import com.example.demo.repositories.InternalPartRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -24,22 +23,22 @@ import static org.mockito.Mockito.when;
  * Created with IntelliJ IDEA
  * To change this template use File | Settings | File Templates.
  */
-class InhousePartServiceTest {
-    InhousePartRepository inhousePartRepository;
-    InhousePartService inhousePartService;
+class InternalPartServiceTest {
+    InternalPartRepository internalPartRepository;
+    InternalPartService internalPartService;
     @BeforeEach
     void setUp() {
-        inhousePartRepository=mock(InhousePartRepository.class);
-        inhousePartService=new InhousePartServiceImpl(inhousePartRepository);
+        internalPartRepository=mock(InternalPartRepository.class);
+        internalPartService=new InhousePartServiceImpl(internalPartRepository);
     }
 
     @Test
     void findAll() {
-        InhousePart part=new InhousePart();
+        InternalPart part=new InternalPart();
         List partData=new ArrayList();
         partData.add(part);
-        when(inhousePartRepository.findAll()).thenReturn(partData);
-        List<InhousePart> parts=inhousePartService.findAll();
+        when(internalPartRepository.findAll()).thenReturn(partData);
+        List<InternalPart> parts=internalPartService.findAll();
         assertEquals(partData.size(),1);
     }
 }

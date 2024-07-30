@@ -39,6 +39,7 @@ h2 {
 
 .container {
     background-color:white;
+    padding: 60px;
 }
 th {
     color: white;
@@ -58,8 +59,5 @@ th {
     background-color: darkgray;
 }
 
-.filter{
-    color: white;
-}
 
 

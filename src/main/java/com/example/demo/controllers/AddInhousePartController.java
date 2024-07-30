@@ -1,8 +1,8 @@
 package com.example.demo.controllers;
 
-import com.example.demo.domain.InhousePart;
+import com.example.demo.domain.InternalPart;
 import com.example.demo.domain.Part;
-import com.example.demo.service.InhousePartService;
+import com.example.demo.service.InternalPartService;
 import com.example.demo.service.InhousePartServiceImpl;
 import com.example.demo.service.PartService;
 import com.example.demo.service.PartServiceImpl;
@@ -31,20 +31,20 @@ public class AddInhousePartController{
 
     @GetMapping("/showFormAddInPart")
     public String showFormAddInhousePart(Model theModel){
-        InhousePart inhousepart=new InhousePart();
+        InternalPart inhousepart=new InternalPart();
         theModel.addAttribute("inhousepart",inhousepart);
         return "InhousePartForm";
     }
 
     @PostMapping("/showFormAddInPart")
-    public String submitForm(@Valid @ModelAttribute("inhousepart") InhousePart part, BindingResult theBindingResult, Model theModel){
+    public String submitForm(@Valid @ModelAttribute("inhousepart") InternalPart part, BindingResult theBindingResult, Model theModel){
         theModel.addAttribute("inhousepart",part);
         if(theBindingResult.hasErrors()){
             return "InhousePartForm";
         }
         else{
-        InhousePartService repo=context.getBean(InhousePartServiceImpl.class);
-        InhousePart ip=repo.findById((int)part.getId());
+        InternalPartService repo=context.getBean(InhousePartServiceImpl.class);
+        InternalPart ip=repo.findById((int)part.getId());
         if(ip!=null)part.setProducts(ip.getProducts());
             repo.save(part);
 
