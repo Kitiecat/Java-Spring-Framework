@@ -102,7 +102,7 @@ public class BootStrapData implements CommandLineRunner {
         */
         List<Peripherals> outsourcedParts=(List<Peripherals>) peripheralsRepository.findAll();
         for(Peripherals part:outsourcedParts){
-            System.out.println(part.getName()+" "+part.getPartType());
+            System.out.println(part.getName()+" "+part.getPeripheralType());
         }
 
         /*

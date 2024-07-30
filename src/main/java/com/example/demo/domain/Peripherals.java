@@ -17,11 +17,11 @@ String peripheralType;
     public Peripherals() {
     }
 
-    public String getPartType() {
+    public String getPeripheralType() {
         return peripheralType;
     }
 
-    public void setPartType(String companyName) {
-        this.peripheralType = companyName;
+    public void setPeripheralType(String peripheralType) {
+        this.peripheralType = peripheralType;
     }
 }

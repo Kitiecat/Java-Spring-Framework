@@ -26,16 +26,16 @@ class PeripheralsTest {
     }
 
     @Test
-    void getCompanyName() {
+    void getPeripheralType() {
         String name="test part type";
-        op.setPartType(name);
-        assertEquals(name,op.getPartType());
+        op.setPeripheralType(name);
+        assertEquals(name,op.getPeripheralType());
     }
 
     @Test
-    void setPartTypeName() {
+    void setPeripheralType() {
         String name="test part type";
-        op.setPartType(name);
-        assertEquals(name,op.getPartType());
+        op.setPeripheralType(name);
+        assertEquals(name,op.getPeripheralType());
     }
 }

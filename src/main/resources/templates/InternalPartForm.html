@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <title>Part Form</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/mainscreen.css}">
 </head>
 <body>
+<div class="container">
 <h1>Internal Part Detail</h1>
 <form action="#" th:action="@{/showFormAddInPart}" th:object="${internalpart}" method="POST"}>
 
@@ -29,5 +31,6 @@
 
 <a href="http://localhost:8080/">Link
     to Main Screen</a>
+</div>
 </body>
 </html>

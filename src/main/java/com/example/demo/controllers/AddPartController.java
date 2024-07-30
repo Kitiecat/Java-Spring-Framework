@@ -29,7 +29,7 @@ public class AddPartController {
 
         PartService repo=context.getBean(PartServiceImpl.class);
         PeripheralsService outsourcedrepo=context.getBean(PeripheralsServiceImpl.class);
-        InternalPartService inhouserepo=context.getBean(InternalPartServiceImpl.class);
+        InternalPartService internalrepo=context.getBean(InternalPartServiceImpl.class);
 
         boolean internalComponent=true;
         List<Peripherals> outsourcedParts=outsourcedrepo.findAll();
@@ -38,8 +38,8 @@ public class AddPartController {
         }
         String formtype;
         if(internalComponent){
-            InternalPart inhousePart=inhouserepo.findById(theId);
-            theModel.addAttribute("inhousepart",inhousePart);
+            InternalPart internalPart=internalrepo.findById(theId);
+            theModel.addAttribute("internalpart",internalPart);
             formtype="InternalPartForm";
         }
         else{
