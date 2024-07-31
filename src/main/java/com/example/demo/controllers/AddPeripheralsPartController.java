@@ -33,16 +33,16 @@ public class AddPeripheralsPartController {
     }
 
     @PostMapping("/showFormAddPeripheralsPart")
-    public String submitForm(@Valid @ModelAttribute("peripheralspart") Peripherals part, BindingResult bindingResult, Model theModel){
-        theModel.addAttribute("peripheralspart",part);
+    public String submitForm(@Valid @ModelAttribute("peripheralspart") Peripherals peripheral, BindingResult bindingResult, Model theModel){
+        theModel.addAttribute("peripheralspart",peripheral);
         if(bindingResult.hasErrors()){
             return "PeripheralsPartForm";
         }
         else{
             PeripheralsServiceImpl repo=context.getBean(PeripheralsServiceImpl.class);
-            Peripherals op=repo.findById((int)part.getId());
-        if(op!=null)part.setPrebuilts(op.getPrebuilts());
-            repo.save(part);
+            Peripherals op=repo.findById((int)peripheral.getId());
+        if(op!=null)peripheral.setPrebuilts(op.getPrebuilts());
+            repo.save(peripheral);
         return "confirmationaddpart";}
     }
 

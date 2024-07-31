@@ -28,13 +28,13 @@ public class AddPartController {
     public String showPartFormForUpdate(@RequestParam("partID") int theId,Model theModel){
 
         PartService repo=context.getBean(PartServiceImpl.class);
-        PeripheralsService outsourcedrepo=context.getBean(PeripheralsServiceImpl.class);
+        PeripheralsService peripheralsrepo=context.getBean(PeripheralsServiceImpl.class);
         InternalPartService internalrepo=context.getBean(InternalPartServiceImpl.class);
 
         boolean internalComponent=true;
-        List<Peripherals> outsourcedParts=outsourcedrepo.findAll();
-        for(Peripherals outsourcedPart:outsourcedParts) {
-            if(outsourcedPart.getId()==theId)internalComponent=false;
+        List<Peripherals> peripheralsParts=peripheralsrepo.findAll();
+        for(Peripherals peripheralsPart:peripheralsParts) {
+            if(peripheralsPart.getId()==theId)internalComponent=false;
         }
         String formtype;
         if(internalComponent){
@@ -43,9 +43,9 @@ public class AddPartController {
             formtype="InternalPartForm";
         }
         else{
-            Peripherals outsourcedPart=outsourcedrepo.findById(theId);
-            theModel.addAttribute("outsourcedpart",outsourcedPart);
-            formtype="OutsourcedPartForm";
+            Peripherals peripheralsPart=peripheralsrepo.findById(theId);
+            theModel.addAttribute("peripheralspart",peripheralsPart);
+            formtype="PeripheralsPartForm";
         }
         return formtype;
     }

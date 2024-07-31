@@ -43,19 +43,29 @@ public class BootStrapData implements CommandLineRunner {
             motherboard.setInv(10);
             motherboard.setPrice(85.51);
             motherboard.setId(1);
+            motherboard.setInvMax(30);
+            motherboard.setInvMin(3);
 
             internalPartRepository.save(motherboard);
 
-            InternalPart graphicsCard = new InternalPart("Graphics Card",450.99,1);
+            InternalPart graphicsCard = new InternalPart("Graphics Card",450.99,10);
+            graphicsCard.setInvMax(50);
+            graphicsCard.setInvMin(2);
             internalPartRepository.save(graphicsCard);
 
             InternalPart intelProcessor = new InternalPart("Intel Processor",399.99,15);
+            intelProcessor.setInvMax(30);
+            intelProcessor.setInvMin(5);
             internalPartRepository.save(intelProcessor);
 
             InternalPart amdProcessor = new InternalPart("AMD Processor",250.99,100);
+            amdProcessor.setInvMax(500);
+            amdProcessor.setInvMin(1);
             internalPartRepository.save(amdProcessor);
 
             InternalPart hardDrive = new InternalPart("Hard Drive",50.99,50);
+            hardDrive.setInvMax(100);
+            hardDrive.setInvMin(10);
             internalPartRepository.save(hardDrive);
         }
         if (prebuiltRepository.count() == 0){

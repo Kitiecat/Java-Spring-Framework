@@ -59,5 +59,21 @@ th {
     background-color: darkgray;
 }
 
+div.row{
+    display:table-row
+}
+
+/*label {*/
+/*    display: inline-block;*/
+/*    float: left;*/
+/*    clear: left;*/
+/*    width: 300px;*/
+/*    text-align: right;*/
+/*}*/
+
+/*input {*/
+/*    display: inline-block;*/
+/*    float: left*/
+/*}*/
 
 

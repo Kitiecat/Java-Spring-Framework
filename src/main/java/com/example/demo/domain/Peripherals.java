@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("2")
 public class Peripherals extends Part{
-String peripheralType;
+private String peripheralType;
 
     public Peripherals() {
     }
