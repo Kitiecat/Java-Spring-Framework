@@ -1,19 +1,72 @@
-Part C changes:
+**Part C changes:**
+7/19
+Created mainscreen.css in the static/css folder
+File mainscreen.html
+Line 13 added stylesheet
+Line 15 renamed title to Tom's Computer Hardware Store
+Lines 18-28 Added header to create a navbar
+Lines 29-79 Added a container div and changed some of the of elements to create a more professional look using bootstrap css
 
-modified the mainscreen.html to include a css sheet in the static/styles called mainscreen.
-Modifed the html to customize it for the customer Tom's Computer Hardware store. 
-
-Part D changes:
-
+**Part D changes:**
+7/29
 created the AboutController class, used mapping to point it to the /about url. Created template about.html and modified the mainscreen.html to create a link in a navbar
+Files: about.html and AboutController
 
-Part E changes:
 
+**Part E changes:**
+7/30
 added code to the BootStrapData class to create 5 initial parts and products that will only run if the database is empty.
+File: BootStrapData
+Lines 39-92
 
 Part F changes:
+Added the Buy Now button to the mainscreen.html file, created the BuyPrebuiltController class, created a method to modify the inventory amount.
+7/30
+File: mainscreen.html
+Line: 100
+File: BuyPrebuiltController
+File: Prebuilt (renamed from Products)
+Lines: 109
+Created the files successfulbuyprebuilt.html and unsuccessfulbuyprebuilt.html
+
+**Part G changes:**
+7/30
+Modified the Part class to include two fields invMin and invMax, created validation to enforce inventory values
+File: Part
+Lines: 37-38
+Renamed InhousePart and associated files to InternalPart to reflect customer buisness logic.
+Renamed the OutsourcedPart class and associated files to Peripherals. 
+Modifed the InternalPartForm and PeripheralsPartForm to display invMin and invMax.
+
+File: InhousePartService renamed to InternalPartService
+File: InhousePartServiceImpl renamed to InternalPartServiceImpl
+File: InhousePartRepository renamed to InternalPartRepository
+File: OutsourcedPartService renamed to PeripheralsParService
+File: OutsourcedPartServiceImpl renamed to PeripheralsParServiceImpl
+File: OutsourcedPartRepository renamed to PeripheralsPartRepository
+
+File: InternalPartForm.html
+Lines 50-60 Added Inventory Min and Inventory Max
+Also reworked the rest of the html to conform to the rest of the website.
+
+File: PeripheralsPartForm.html
+Lines 49-59
+Also reworked the rest of the html to conform to the rest of the website.
+
+**Part H changes:**
+Created the InventoryMaxValidator, InventoryMinValidator, ValidInventoryMax, ValidInventoryMin custom validators
+
+File: InternalPartForm.html
+Lines 53 and 59 Added an error message
 
 
+File: PeripheralsPartForm.html
+Lines 52 and 58 Added an error message
+
+
+**Part I Changes:**
+File: PartTest
+Lines: 86-118
 
 
 
