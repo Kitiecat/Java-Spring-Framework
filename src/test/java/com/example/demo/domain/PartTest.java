@@ -84,6 +84,41 @@ class PartTest {
     }
 
     @Test
+    void getInvMax() {
+        int invMax = 10;
+        partIn.setInvMax(invMax);
+        assertEquals(invMax,partIn.getInvMax());
+        partOut.setInvMax(invMax);
+        assertEquals(invMax,partOut.getInvMax());
+    }
+    @Test
+    void setInvMax() {
+        int invMax = 10;
+        partIn.setInvMax(invMax);
+        assertEquals(invMax,partIn.getInvMax());
+        partOut.setInvMax(invMax);
+        assertEquals(invMax,partOut.getInvMax());
+    }
+
+    @Test
+    void getInvMin() {
+        int invMin = 1;
+        partIn.setInvMin(invMin);
+        assertEquals(invMin,partIn.getInvMin());
+        partOut.setInvMin(invMin);
+        assertEquals(invMin,partOut.getInvMin());
+    }
+    @Test
+    void setInvMin() {
+        int invMin = 1;
+        partIn.setInvMin(invMin);
+        assertEquals(invMin,partIn.getInvMin());
+        partOut.setInvMin(invMin);
+        assertEquals(invMin,partOut.getInvMin());
+    }
+
+
+    @Test
     void getInv() {
         int inv=5;
         partIn.setInv(inv);
