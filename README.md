@@ -19,7 +19,7 @@ added code to the BootStrapData class to create 5 initial parts and products tha
 File: BootStrapData
 Lines 39-92
 
-Part F changes:
+**Part F changes:**
 Added the Buy Now button to the mainscreen.html file, created the BuyPrebuiltController class, created a method to modify the inventory amount.
 7/30
 File: mainscreen.html
@@ -68,6 +68,8 @@ Lines 52 and 58 Added an error message
 File: PartTest
 Lines: 86-118
 
+**Part J Changes**
+Removed the EnufPartsValidator because the Prebuilt inventory doesn't have any reason to check an associated parts inventory. The buy now button doesn't affect the amount of parts.
 
 
 <strong>** DO NOT DISTRIBUTE OR PUBLICLY POST SOLUTIONS TO THESE LABS. MAKE ALL FORKS OF THIS REPOSITORY WITH SOLUTION CODE PRIVATE. PLEASE REFER TO THE STUDENT CODE OF CONDUCT AND ETHICAL EXPECTATIONS FOR COLLEGE OF INFORMATION TECHNOLOGY STUDENTS FOR SPECIFICS. ** </strong>
