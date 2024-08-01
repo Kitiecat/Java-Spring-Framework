@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,25 +22,24 @@
     </ul>
 </header>
 <body>
-<div class="container">
+<div class="container min-vh-100 rounded">
 <h1>Prebuilt Detail</h1>
-<form action="#" th:action="@{/showFormAddPrebuilt}" th:object="${prebuilt}" method="POST"}>
+<form action="#" th:action="@{/showFormAddPrebuilt}" th:object="${prebuilt}" method="POST">
     <!-- Add hidden form field to handle update -->
-    <p><input type="hidden" th:field="*{id}"/></p>
+    <label for="hidden"></label><input id=hidden type="hidden" th:field="*{id}"/>
 
-    <p><input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/></p>
+    <label for="name">Name</label><input id="name" type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/>
 
-    <p><input type="text" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/></p>
+    <label for="price">Price</label><input id="price" type="text" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/>
 
 
-    <p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
+    <label for="inv">Inventory</label><input id="inv" type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/>
 
-    <p>
+
     <div th:if="${#fields.hasAnyErrors()}">
     <ul><li th:each="err: ${#fields.allErrors()}" th:text="${err}"></li></ul>
     </div>
-    </p>
-    <p><input type="submit" value="Submit" /></p>
+    <button class="btn-primary btn-sm mb-3" type="submit">Submit</button>
 </form>
 
 
