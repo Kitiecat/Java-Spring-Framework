@@ -1,6 +1,6 @@
 package com.example.demo.domain;
 
-//import com.example.demo.validators.ValidEnufParts;
+import com.example.demo.validators.ValidEnufParts;
 import com.example.demo.validators.ValidProductPrice;
 
 import javax.persistence.*;
@@ -18,7 +18,7 @@ import java.util.Set;
 @Entity
 @Table(name="Prebuilt")
 @ValidProductPrice
-//@ValidEnufParts
+@ValidEnufParts
 public class Prebuilt implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
