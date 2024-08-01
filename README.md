@@ -55,6 +55,8 @@ Also reworked the rest of the html to conform to the rest of the website.
 
 **Part H changes:**
 Created the InventoryMaxValidator, InventoryMinValidator, ValidInventoryMax, ValidInventoryMin custom validators
+Modified the EnufPartsValidator to use InvMin to calculate if there were enough parts when updating a Prebuilt. 
+Line 36
 
 File: InternalPartForm.html
 Lines 53 and 59 Added an error message
