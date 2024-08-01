@@ -33,7 +33,7 @@ public class EnufPartsValidator implements ConstraintValidator<ValidEnufParts, P
         if (prebuilt.getId() != 0) {
             Prebuilt myPrebuilt = repo.findById((int) prebuilt.getId());
             for (Part p : myPrebuilt.getParts()) {
-                if (p.getInvMin()<(prebuilt.getInv()-myPrebuilt.getInv()))return false;
+                if (p.getInv() - p.getInvMin()<(prebuilt.getInv()-myPrebuilt.getInv()))return false;
             }
             return true;
         }
