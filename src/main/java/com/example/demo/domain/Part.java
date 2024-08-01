@@ -1,5 +1,6 @@
 package com.example.demo.domain;
 
+//import com.example.demo.validators.ValidDeletePart;
 import com.example.demo.validators.ValidInventoryMax;
 import com.example.demo.validators.ValidInventoryMin;
 

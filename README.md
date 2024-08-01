@@ -69,7 +69,7 @@ File: PartTest
 Lines: 86-118
 
 **Part J Changes**
-Removed the EnufPartsValidator because the Prebuilt inventory doesn't have any reason to check an associated parts inventory. The buy now button doesn't affect the amount of parts.
+Removed the DeletePartsValidator as it was unused. 
 
 
 <strong>** DO NOT DISTRIBUTE OR PUBLICLY POST SOLUTIONS TO THESE LABS. MAKE ALL FORKS OF THIS REPOSITORY WITH SOLUTION CODE PRIVATE. PLEASE REFER TO THE STUDENT CODE OF CONDUCT AND ETHICAL EXPECTATIONS FOR COLLEGE OF INFORMATION TECHNOLOGY STUDENTS FOR SPECIFICS. ** </strong>

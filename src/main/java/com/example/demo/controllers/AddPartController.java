@@ -51,7 +51,7 @@ public class AddPartController {
     }
 
     @GetMapping("/deletepart")
-    public String deletePart(@Valid @RequestParam("partID") int theId,  Model theModel){
+    public String deletePart(@RequestParam("partID") int theId,  Model theModel){
         PartService repo = context.getBean(PartServiceImpl.class);
         Part part=repo.findById(theId);
         if(part.getPrebuilts().isEmpty()){
